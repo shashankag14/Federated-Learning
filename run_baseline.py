@@ -14,23 +14,22 @@ print("RUNNING BASELINE (w/o Federated Learning)")
 device = utils.device
 print("Device being used : {}".format(device))
 
-model = model.Model()
+model = model.Model().to(device)
 criterion = torch.nn.CrossEntropyLoss().to(device)
 opt = torch.optim.Adam(model.parameters(), lr = utils.args.init_lr)
 
 def train(num_epochs, model, dataloader):
 	model.train()
-	running_loss = 0
 	epoch_losses = []
 
 	for epoch in range(1, num_epochs+1):
 		start_time = time.time()
+		running_loss = 0
 		with tqdm(dataloader, unit="Batch") as tepoch:
 			for iter, (img, label) in enumerate(dataloader) :
 				tepoch.set_description(f"Epoch {epoch}")
 
-				img, labels = img.to(device), label.to(device)
-
+				img, label = img.to(device), label.to(device)
 				pred = model(img)
 				loss = criterion(pred, label)
 				opt.zero_grad()

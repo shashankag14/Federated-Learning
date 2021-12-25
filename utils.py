@@ -13,11 +13,11 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Argument parser
 parser = argparse.ArgumentParser(description='train')
-parser.add_argument('--data_dir', type=str, default='../data/',
+parser.add_argument('--data_dir', type=str, default='data/',
                     help='Directory to store the data')
 parser.add_argument('--batch_size', type=int, default=100,
                     help='Batch size')
-parser.add_argument('--epoch', type=int, default=100,
+parser.add_argument('--epoch', type=int, default=15,
                     help='Epochs to train')
 parser.add_argument('--init_lr', type=float, default=5e-5,
                     help='Initial learning rate')
