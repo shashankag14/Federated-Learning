@@ -28,7 +28,7 @@ class Model(nn.Module) :
 
 
 
-MODEL_SANITY_CHECK = 1
+MODEL_SANITY_CHECK = 0
 if MODEL_SANITY_CHECK :
 	x = torch.randn([16, 1, 28, 28])
 	model = Model(1, 10)
