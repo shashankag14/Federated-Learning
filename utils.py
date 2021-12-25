@@ -18,11 +18,22 @@ parser.add_argument('--data_dir', type=str, default='data/',
 parser.add_argument('--batch_size', type=int, default=100,
                     help='Batch size')
 parser.add_argument('--epoch', type=int, default=15,
-                    help='Epochs to train')
+                    help='Number of epochs')
+
+parser.add_argument('--global_epoch', type=int, default=5,
+                    help='[ONLY FOR FED_LEARNING] Number of global epochs (updates to server)')
+parser.add_argument('--local_epoch', type=int, default=5,
+                    help='[ONLY FOR FED_LEARNING] Number of epochs for clients to train per global epoch')
+
 parser.add_argument('--init_lr', type=float, default=5e-5,
                     help='Initial learning rate')
 parser.add_argument('--enable_fed_learning', type=bool, default=1,
                     help='Enable federated learning technique for value 1')
+
+parser.add_argument('--num_clients', type=int, default=8,
+                    help='Total number of clients')
+parser.add_argument('--num_select_clients', type=int, default=4,
+                    help='Number of randomly selected clients for local training')
 
 args = parser.parse_args()
 
