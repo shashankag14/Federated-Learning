@@ -60,7 +60,7 @@ def train(num_epochs, model, dataloader):
 
 if __name__ == '__main__':
 	epoch_losses = train(utils.args.epoch, model, dataloader.train_dataloader)
-	plot.plot_loss(epoch_losses)
+	test_loss, test_acc = test.test(model, dataloader.test_dataloader)
 
-	# test_loss, test_acc = test(model, dataloader.test_dataloader)
-	# print(f'Test Loss: {test_loss:.3f} | Test Accuracy: {test_acc:.2f}')
+	print(f'Test Loss: {test_loss:.3f} | Test Accuracy: {test_acc:.2f}')
+	plot.plot_loss(epoch_losses)
