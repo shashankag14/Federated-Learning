@@ -6,10 +6,10 @@ A PyTorch implementation of Federated Learning from scratch partially based on t
 Federated learning (FL) is an approach that downloads the current model and computes an updated model at the device itself (ala edge computing) using local data. These locally trained models are then sent from the devices back to the central server where they are aggregated, i.e. averaging weights, and then a single consolidated and improved global model is sent back to the devices.
 
 # Getting started
-To install the required libraries, run the following script :
+* To install the required libraries, run the following script :
 > sh [requirements.sh](requirements.sh)
 
-Run the following command to train using Federated Learning :
+* Run the following command to train using Federated Learning :
 ```
 python3 run_federated.py [-h] [--data_dir DATA_DIR] [--batch_size BATCH_SIZE]
                         [--epoch EPOCH] [--global_epoch GLOBAL_EPOCH]
@@ -18,7 +18,7 @@ python3 run_federated.py [-h] [--data_dir DATA_DIR] [--batch_size BATCH_SIZE]
                         [--num_select_clients NUM_SELECT_CLIENTS]
 
 ```
-Run the following command to train without Federated Learning (for reference):
+* Run the following command to train without Federated Learning (for reference):
 ```
 python3 run_baseline.py [-h] [--data_dir DATA_DIR] [--batch_size BATCH_SIZE]
                         [--epoch EPOCH] [--global_epoch GLOBAL_EPOCH]
@@ -27,6 +27,7 @@ python3 run_baseline.py [-h] [--data_dir DATA_DIR] [--batch_size BATCH_SIZE]
                         [--num_select_clients NUM_SELECT_CLIENTS]
 
 ```
+*Note : Test phase is automatically started immediately after training is finished.*
 
 # Hyperparams 
 
