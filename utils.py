@@ -27,8 +27,6 @@ parser.add_argument('--local_epoch', type=int, default=5,
 
 parser.add_argument('--init_lr', type=float, default=5e-5,
                     help='Initial learning rate')
-parser.add_argument('--enable_fed_learning', type=bool, default=1,
-                    help='Enable federated learning technique for value 1')
 
 parser.add_argument('--num_clients', type=int, default=8,
                     help='Total number of clients')
